@@ -1,0 +1,37 @@
+//Layout-ish type of things
+// It's more generic 
+
+.cc-small-line {
+	line-height: 1.4rem;
+}
+
+.cc-spacer {
+	padding: $global-padding;
+}
+
+.cc-top-break {
+	padding-top: $sm-padding;
+}
+
+.cc-row-cell {
+	display: table-cell;
+}
+.cc-panel {
+	background: $light;
+	border-radius: $_lg;
+	border-top: $secondary solid 1px;
+	padding: $global-padding;
+}
+
+.cc-container-wide {
+    width:auto;
+    max-width:1600px;
+    min-width:1200px;
+    padding:15px;
+    margin:0 auto;
+}
+
+.cc-container{
+    width: auto;
+    max-width: 1600px;
+}

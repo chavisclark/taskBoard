@@ -1,0 +1,15 @@
+// Icons
+i {
+	padding-right: 0.3em;
+	font-style: normal;
+}
+
+i.clock::before {
+	content: '\1F551';
+	font-size: 80%;
+}
+
+i.pointer::before {
+	content: '\1F446';
+	font-size: 80%;
+}

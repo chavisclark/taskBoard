@@ -1,0 +1,78 @@
+//Task-related styles
+
+
+.cc-component-wrap {
+	width: 100%;
+	display: table;
+	margin: 0 auto;
+}
+
+.cc-border-red {
+	border-left: 5px solid $red
+}
+
+.cc-border-green {
+	border-left: 5px solid $green
+}
+
+.cc-border-yellow {
+	border-left: 5px solid $yellow
+}
+
+.cc-border-blue {
+	border-left: 5px solid $blue
+}
+
+.cc-border-purple {
+	border-left: 5px solid $purple
+}
+
+.cc-border-indigo {
+	border-left: 5px solid $indigo
+}
+
+.cc-header {
+	color: #FFF;
+}
+
+.cc-task {
+	@include border-radius($_lg);
+	transition: background-color 0.1s ease-in-out;
+	cursor: grab;
+	text-align: left;
+}
+
+.cc-target-bg {
+	background: $light
+}
+
+.cc-target-hover {
+	background: get-color(lightgrey, mid-light);
+}
+
+.cc-target-drop {
+	background: get-color(yellow, x-light);
+}
+
+.cc-left {
+	left: 0.3em;
+}
+
+.cc-right {
+	right: 0.3em;
+}
+
+.cc-date {
+	font-size: 60%;
+}
+
+.cc-done {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 60%;
+    color: get-color(white);
+    padding: 0.3em;
+    @include border-radius($_lg);
+    background: get-color(green, dark);
+}

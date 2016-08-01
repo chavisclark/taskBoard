@@ -1,0 +1,28 @@
+// Input type styles
+
+.cc-text-input-wrap {
+	display: table;
+	width: 100%;
+}
+.cc-text-input {
+	display: table-cell;
+	margin: 0;
+	padding: $sm_padding;
+}
+
+.cc-text-input-btn {
+	display: table-cell;
+	margin: 0;
+	white-space: nowrap;
+	padding: $sm_padding;
+}
+
+.cc-btn.secondary {
+	max-width: 100%;
+	white-space: nowrap;
+	border-radius: $_xl;
+	padding: 0.05em;
+	background: $light;
+	border: solid 1px $secondary;
+	color: $secondary-color;
+}

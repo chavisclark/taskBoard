@@ -1,0 +1,52 @@
+$_xl: 15px;
+$_lg: 5px;
+$_sm: 2px;
+
+.cc-top-radius-lg {
+  @include border-top-radius($_lg);
+}
+
+.cc-bottom-radius-lg {
+  @include border-bottom-radius($_lg);
+}
+
+.cc-left-radius-lg {
+  @include border-left-radius($_lg);
+}
+
+.cc-all-radius-lg {
+  @include border-radius($_lg);
+}
+
+.cc-top-radius-sm {
+  @include border-top-radius($_sm);
+}
+
+.cc-bottom-radius-sm {
+  @include border-bottom-radius($_sm);
+}
+
+.cc-all-radius-sm {
+  @include border-radius($_sm);
+}
+
+.cc-all-radius-lg {
+  @include border-radius($_lg);
+}
+
+.cc-border-radius-top-none {
+	border-top-left-radius: 0px !important; 
+	border-top-right-radius: 0px !important;
+}
+
+.cc-border-bottom-none {
+	border-bottom: none !important;
+}
+
+.cc-border-top-none {
+	border-top: none !important;
+}
+
+.cc-bordered-top {
+	border-top: 1px solid get-color(grayscale, mid-light);
+}

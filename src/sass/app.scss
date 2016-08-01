@@ -1,0 +1,32 @@
+//Include
+@import "~foundation-sites/scss/foundation";
+@include foundation-everything;
+
+// Import common
+@import "common/colors";
+@import "common/mixins";
+@import "common/padding";
+@import "common/border_radius";
+@import 'common/icons';
+@import 'common/input';
+
+// Import partials
+@import 'partials/layout';
+@import "partials/modal";
+@import 'partials/task';
+
+//Vanilla CSS
+body {
+	width: 100%;
+	height: 100%;
+	background: $light-secondary;
+}
+p {
+	font-size: 90%;
+}
+.title {
+	margin-top: 1.25em;
+	color: black;
+	text-align: center;
+	text-shadow: 1px 1px 0 #eee;
+}
