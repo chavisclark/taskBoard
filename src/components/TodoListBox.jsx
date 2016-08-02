@@ -33,7 +33,10 @@ const listTarget = {
 class TodoListBox extends Component {
   constructor(props) {
     super(props);
-    this.moveCard = this.moveCard.bind(this);
+    this.moveItem = this.moveItem.bind(this);
+    this.state = {
+      tasks: this.props.tasks
+    };
   }
   //Here I'm using the static method to list my props
   static propTypes = {
@@ -46,17 +49,17 @@ class TodoListBox extends Component {
 
 //This function allows the TaskItem to move
 //It will be passed through as one of its props
-  moveCard(dragIndex, hoverIndex) {
+  moveItem(dragIndex, hoverIndex) {
     const { tasks } = this.props;
-    const dragCard = tasks[dragIndex];
-
+    const dragItem = tasks[dragIndex];
     this.setState(update(this.state, {
       tasks: {
         $splice: [
           [dragIndex, 1],
-          [hoverIndex, 0, dragCard]
-        ]
+          [hoverIndex, 0, dragItem]
+        ]        
       }
+
     }));
   }
 
@@ -102,7 +105,7 @@ class TodoListBox extends Component {
                         task={task.task}
                         listId={list.id}
                         Otask={task}
-                        moveCard={this.moveCard} 
+                        moveItem={this.moveItem} 
                         isDropped={this.isDropped(task)}
                         date={task.date} />
                 );

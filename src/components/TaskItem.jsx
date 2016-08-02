@@ -27,7 +27,7 @@ const itemSource = {
 };
 
 //This is the target specification identifying the drag source destination
-const cardTarget = {
+const itemTarget = {
   hover(props, monitor, component) {
     const dragIndex = monitor.getItem().index;
     const hoverIndex = props.index;
@@ -75,7 +75,7 @@ const cardTarget = {
 };
 
 //These functions let the app know when drag actions are occuring
-@DropTarget(types.NOTE, cardTarget, connect => ({
+@DropTarget(types.NOTE, itemTarget, connect => ({
   connectDropTarget: connect.dropTarget()
 }))
 @DragSource(types.NOTE, itemSource, (connect, monitor) => ({

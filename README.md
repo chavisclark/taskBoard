@@ -5,7 +5,7 @@
 1) Integrated Foundation Sites (with Sass)
 2) Implemented simple responsive design
 3) Developed editable modal for color and tags
-4) Implemented drag and drop functionality across lists (I was unable to implement column reordering in time)
+4) Implemented drag and drop functionality across lists
 5) Minimal unit/functional tests
 
 
@@ -28,9 +28,9 @@ npm test
 ```
 
 ### Missing Features
-1) Reorder tasks on columns
+~~1) Reorder tasks on columns~~ Simple errors regarding state
 
-Unforunately I was unable to successfully meet all requirements. 
+~~Unforunately I was unable to successfully meet all requirements.~~ 
 I will still continue to work on this regardless, because I'm a problem solver!
 
 ### Conclusion
