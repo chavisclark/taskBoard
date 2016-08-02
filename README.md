@@ -27,11 +27,14 @@ It's only a few tests.
 npm test
 ```
 
-### Missing Features
-~~1) Reorder tasks on columns~~ Simple errors regarding state
-
-~~Unforunately I was unable to successfully meet all requirements.~~ 
-I will still continue to work on this regardless, because I'm a problem solver!
+### Things to be improved
+1) Keep tags from consolidating after list change (possible bug)
+2) InputBox: Clear input field after after click event. (Currently is only cleared after ENTER)
+3) Modal: Submit tags on ENTER
+4) Implement { task, tags, list } remove functionality
+5) Implement Add New List
+6) Configure localstorage
+-- These are things that I started, and will implement in the near future
 
 ### Conclusion
 

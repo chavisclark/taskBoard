@@ -35,6 +35,11 @@
 	color: #FFF;
 }
 
+.cc-small-font {
+	font-size: 50%;
+}
+
+
 .cc-task {
 	@include border-radius($_lg);
 	transition: background-color 0.1s ease-in-out;

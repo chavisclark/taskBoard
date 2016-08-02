@@ -14,9 +14,8 @@ const cx = classNames.bind(styles);
 const listTarget = {
   drop(props, monitor) {
     props.onDrop(monitor.getItem());
-    
-    var item = monitor.getItem();
-    var dropResult = props.list;
+    let item = monitor.getItem();
+    let dropResult = props.list;
     props.dispatch(actions.attachToList(item, dropResult));
   }
 };
@@ -86,7 +85,7 @@ class ListBox extends Component {
         <div className={cx("cc-panel", `${taskDropStyle}`)}>
           <h5>{boxName}</h5>
           <i className={cx("pointer")}></i>
-          <small className={cx("cc-small-line")}>Drag task between list</small>
+          <small className={cx("cc-small-line", "cc-small-font")}>Drag task <b>between</b> list and/or <b>down</b> to reorder</small>
           <hr />
             {isActive ?
               'Release to drop' : ''
@@ -102,7 +101,10 @@ class ListBox extends Component {
                         Otask={task}
                         moveItem={this.moveItem} 
                         isDropped={this.isDropped(task)}
-                        date={task.date} />
+                        taskColor={task.taskColor}
+                        taskTags={task.taskTags} 
+                        date={task.date}
+                        />
                 );
               })
             }

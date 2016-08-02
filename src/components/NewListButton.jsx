@@ -6,10 +6,6 @@ export default class NewListButton extends Component {
     this.onClick = this.onClick.bind(this);
   }
 
-  /*
-   * Invokes the onClick event, allowing this component to be
-   * used in different ways. I personally think this makes it more reusable.
-   */
   onClick(event) {
   	// console.log(this.props)
    //  const { addNewList } = this.props;

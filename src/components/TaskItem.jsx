@@ -16,17 +16,22 @@ const style = {
 //This is the drag source specification used to identify
 //the draggable component
 const itemSource = {
-  beginDrag(props) {
+
+//For docs on react-dnd see https://gaearon.github.io/react-dnd/docs-drag-source.html
+  beginDrag(props, monitor, component) {
     return {
       id: props.id,
       index: props.index,
       task: props.task,
-      date: props.date
+      date: props.date,
+      taskTags: [component.state.taskTags],
+      taskColor: component.state.taskColor
     };
   },
 };
 
 //This is the target specification identifying the drag source destination
+//For docs on react-dnd see https://gaearon.github.io/react-dnd/docs-drag-source.html
 const itemTarget = {
   hover(props, monitor, component) {
     const dragIndex = monitor.getItem().index;
@@ -75,9 +80,11 @@ const itemTarget = {
 };
 
 //These functions let the app know when drag actions are occuring
+//For docs on react-dnd see https://gaearon.github.io/react-dnd/docs-drop-target.html
 @DropTarget(types.NOTE, itemTarget, connect => ({
   connectDropTarget: connect.dropTarget()
 }))
+//For docs on react-dnd see https://gaearon.github.io/react-dnd/docs-drag-source.html
 @DragSource(types.NOTE, itemSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
   isDragging: monitor.isDragging()
@@ -88,8 +95,8 @@ export default class TaskItem extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-    	taskColor: 'blue',
-    	taskTags: []  
+      taskColor:!this.props.Otask.taskColor ? 'blue' : this.props.Otask.taskColor,
+      taskTags: !this.props.Otask.taskTags ? [] : this.props.Otask.taskTags, 
     };
     this.onChange = this.onChange.bind(this);
     this.onBlur = this.onBlur.bind(this);
@@ -118,14 +125,12 @@ export default class TaskItem extends Component {
     event.target.value = '';
 	}
   render() {
-  	const { taskColor, taskTags } = this.state;
     const { date, task, Otask, isDragging, isDropped, 
       connectDragSource, connectDropTarget } = this.props;
-    const { done } = Otask;
+    let { done } = Otask;
     const opacity = isDragging ? 0.4 : 1;
-
     return connectDragSource(connectDropTarget(
-	    <div className={cx("callout", "cc-task", `cc-border-${taskColor}`)} style={{ ...style, opacity }}>
+	    <div className={cx("callout", "cc-task", `cc-border-${this.state.taskColor}`)} style={{ ...style, opacity }}>
         {isDropped ? 
         	<s>{task}</s> :
         	task 
@@ -133,9 +138,9 @@ export default class TaskItem extends Component {
         <TaskModal task={task}
         		addTags={this.onBlur} 
         		changeColor={this.onChange}
-            taskTags={taskTags} />
+            taskTags={this.state.taskTags} />
         <Utilities done={done} 
-            taskTags={taskTags} 
+            taskTags={this.state.taskTags} 
             date={date} />
       </div>
     ));
@@ -144,8 +149,7 @@ export default class TaskItem extends Component {
 
 function mapStateToProps(state) {
   return {
-    taskColor: state.task.taskColor,
-    taskTags: state.task.taskTags
+    null
   };
 }
 

@@ -5,7 +5,9 @@ const cx = classNames.bind(styles);
 
 const Tag = ({tag}) => {
   return (
-      <a href="#" className={cx("cc-row-cell", "cc-right", "cc-btn", "small", "button", "secondary")}>{tag}</a>
+      <span className={cx('cc-pad')}>
+      	<a href="#" className={cx("cc-row-cell", "cc-right", "cc-btn", "small", "button", "secondary")}>{tag}</a>
+      </span>
   );
 };
 

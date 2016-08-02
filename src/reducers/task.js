@@ -9,7 +9,6 @@ import {
 
 export default function task(state = {
   tasks: [],
-  taskTags: [],
   newTask: ''
 }, action) {
   switch (action.type) {
@@ -31,14 +30,10 @@ export default function task(state = {
     case MOVE_TO_LIST:
       return {
         tasks: [...state.tasks.filter((t) => t.id !== action.taskO.id), action.taskO],
-        taskTags: action.taskTags,
-        taskColor: action.taskColor
       };
     case MOVE_TO_DONE:
       return {
         tasks: [...state.tasks.filter((t) => t.id !== action.taskO.id), action.taskO],
-        taskTags: action.taskTags,
-        taskColor: action.taskColor
       }
     default:
       return state;

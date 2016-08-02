@@ -43,6 +43,14 @@ export function moveToNewList(taskO, taskTags) {
   };
 }
 
+export function getState() {
+  return (dispatch, getState) => {
+    const { task } = getState();
+    return task.tasks
+  }
+}
+
+
 //The action that controls which list the task belongs to
 //This is where I collect the listId from the target and 
 //create a new object with the updated credentials

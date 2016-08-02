@@ -15,14 +15,14 @@ const cx = classNames.bind(styles);
 const listTarget = {
   drop(props, monitor) {
     props.onDrop(monitor.getItem());
-    
-    var item = monitor.getItem();
-    var dropResult = props.list;
+    let item = monitor.getItem();
+    let dropResult = props.list;
     props.dispatch(actions.attachToList(item, dropResult));
   }
 };
 //In this function I'm going to connect my drop 
 //target node and monitor whether the pointer is hovering over the TodoListBox
+//For docs on react-dnd see https://gaearon.github.io/react-dnd/docs-drop-target.html
 @DropTarget(types.NOTE, listTarget, (connect, monitor) => ({
   connectDropTarget: connect.dropTarget(),
   isOver: monitor.isOver(),
@@ -49,6 +49,7 @@ class TodoListBox extends Component {
 
 //This function allows the TaskItem to move
 //It will be passed through as one of its props
+//For docs on react-dnd see https://gaearon.github.io/react-dnd/docs-drop-target.html
   moveItem(dragIndex, hoverIndex) {
     const { tasks } = this.props;
     const dragItem = tasks[dragIndex];
@@ -86,7 +87,7 @@ class TodoListBox extends Component {
         <div className={cx("cc-panel", `${taskDropStyle}`)}>
           <h5>{boxName}</h5>
           <i className={cx("pointer")}></i>
-          <small className={cx("cc-small-line")}>Drag task between list</small>
+          <small className={cx("cc-small-line", "cc-small-font")}>Drag task <b>between</b> list and/or <b>down</b> to reorder</small>
           <InputBox task={newTask}
             onInputChange={typing}
             onInputSave={createTask}
@@ -107,7 +108,10 @@ class TodoListBox extends Component {
                         Otask={task}
                         moveItem={this.moveItem} 
                         isDropped={this.isDropped(task)}
-                        date={task.date} />
+                        taskColor={task.taskColor}
+                        taskTags={task.taskTags} 
+                        date={task.date} 
+                        />
                 );
               })
             }

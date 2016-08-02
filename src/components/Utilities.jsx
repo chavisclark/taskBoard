@@ -6,13 +6,8 @@ const cx = classNames.bind(styles);
 
 //All of these will be loacte at the bottom of the task
 const Utilities = ({date, taskTags, done}) => {
-  let temp = {
-    display: 'block',
-    width: '100%',
-    textAlign: 'center',
-  }
   return (
-    <div className={cx("cc-modal-footer")}>
+    <div className={cx("cc-modal-footer", 'cc-row')}>
       <span className={cx("cc-row-cell", "cc-right")}>
         <i className={cx("clock")}></i>
         <span className={cx("cc-date")}>{date}</span>

@@ -16,7 +16,8 @@ export default class TaskModal extends Component {
     changeColor: PropTypes.func
   };
     render() {
-//Colors used in task edit modal
+   
+   //Colors used in task edit modal
     const colors = ['red', 'green', 'yellow', 'blue', 'purple', 'indigo']
       return (
         <div className={cx('row')}>
@@ -34,12 +35,12 @@ export default class TaskModal extends Component {
         </div>
       )
     }
-  onKeyDown(event) {
-    if (event.keyCode === ENTER_KEY_CODE) {
-      this.handleOnClick();
-      event.target.value = '';
+    onKeyDown(event) {
+      if (event.keyCode === ENTER_KEY_CODE) {
+        this.handleOnClick();
+        event.target.value = '';
+      }
     }
-  }
     openModal() {
       this.setState({ isModalOpen: true })
     }

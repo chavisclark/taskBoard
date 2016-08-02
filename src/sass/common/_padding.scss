@@ -2,3 +2,8 @@
 
 $global-padding: 15px;
 $sm_padding: 5px;
+
+.cc-pad {
+	padding-left: $sm_padding;
+	padding-right: $sm_padding
+}
