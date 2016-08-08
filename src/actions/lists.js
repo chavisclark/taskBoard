@@ -5,10 +5,6 @@ import uuid from 'uuid';
 
 polyfill();
 
-export function destroy(index) {
-  return { type: types.DESTROY_TASK, index };
-}
-
 export function addNewListSuccess(data) {
   return {
     type: types.ADD_LIST_SUCCESS,
@@ -24,14 +20,5 @@ export function addNewList(name) {
       name
     };
 	dispatch(addNewListSuccess(list))
-  };
-}
-
-export function destroyTask(id, index) {
-  return dispatch => {
-    return makeTaskRequest('delete', id)
-      .then(() => dispatch(destroy(index)))
-      .catch(() => dispatch(addNewListFailure({id,
-        error: 'Oops! Something went wrong and we couldn\'t add your vote'})));
   };
 }

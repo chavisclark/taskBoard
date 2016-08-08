@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 export default class Modal extends Component{
     render() {
     
-    //This is the logic for displaying the modal and hiding it
+      //This is the logic for displaying the modal and hiding it
       if (this.props.isOpen === false)
         return null;
       

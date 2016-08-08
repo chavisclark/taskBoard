@@ -4,9 +4,7 @@
   "description": "Task list board with drag and drop functionality",
   "scripts": {
     "start": "node server.js",
-    "lint": "eslint src",
     "test": "karma start",
-    "test:watch": "npm test -- --watch --no-single-run"
   },
   "devDependencies": {
     "babel-core": "^6.0.20",

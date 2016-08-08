@@ -84,6 +84,7 @@ const itemTarget = {
 @DropTarget(types.NOTE, itemTarget, connect => ({
   connectDropTarget: connect.dropTarget()
 }))
+
 //For docs on react-dnd see https://gaearon.github.io/react-dnd/docs-drag-source.html
 @DragSource(types.NOTE, itemSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),

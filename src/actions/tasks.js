@@ -56,15 +56,18 @@ export function getState() {
 //create a new object with the updated credentials
 export function attachToList(taskO, listO) {
   return (dispatch, getState) => {
-//dispatching actions and getting state
+    
+    //dispatching actions and getting state
     const { task } = getState();
-//Defining constants
+    
+    //Defining constants
     const tasks = task.tasks;
     const taskTags = task.taskTags;
     const listId = listO.id;
     taskO.listId = listId;
-//Just some logic to identify if the list the task is changing to
-//is the Completed one. If it is I'll put my party hat on
+    
+    //Just some logic to identify if the list the task is changing to
+    //is the Completed one. If it is I'll put my party hat on
     if (listO.name === 'Completed') {
       taskO.done = true;
       dispatch(moveToDoneList(taskO, taskTags));
@@ -79,9 +82,10 @@ export function attachToList(taskO, listO) {
 // Generating the new task
 export function createTask(lId, task) {
   return (dispatch, getState) => {
-// Send alert if the text box is empty
+    // Send alert if the text box is empty
     if (!task) {
-//Nothing fancy here
+      
+      //Nothing fancy here
       alert('Please enter a new task.')
         return;
     } else {

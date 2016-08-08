@@ -45,8 +45,8 @@ class ListBox extends Component {
     droppedTasks: PropTypes.any
   };
 
-//This function allows the TaskItem to move
-//It will be passed through as one of its props
+  //This function allows the TaskItem to move
+  //It will be passed through as one of its props
   moveItem(dragIndex, hoverIndex) {
     const { tasks } = this.props;
     const dragItem = tasks[dragIndex];
@@ -61,18 +61,20 @@ class ListBox extends Component {
     }));
   }
 
-//This function is checking to see whether the TaskItem has dropped
-//It will also be getting passed through as a prop
+  //This function is checking to see whether the TaskItem has dropped
+  //It will also be getting passed through as a prop
   isDropped(taskText) {
     return this.props.droppedTasks.indexOf(taskText) > -1;
   }
 
   render() {
-//Defining constants from props
+    //Defining constants from props
     const { boxName, list, tasks, isOver, canDrop, connectDropTarget } = this.props;
-//Filtering the lists so that each task can only belong to one list at a time
+    
+    //Filtering the lists so that each task can only belong to one list at a time
     const taskList = tasks.filter(task => task.listId == list.id);
-//Defining constant and configuring styles for identifying whether target is active
+    
+    //Defining constant and configuring styles for identifying whether target is active
     const isActive = isOver && canDrop;
     let taskDropStyle = 'cc-target-bg';
     if (isActive) {

@@ -7,8 +7,6 @@ export default class NewListButton extends Component {
   }
 
   onClick(event) {
-  	// console.log(this.props)
-   //  const { addNewList } = this.props;
     this.props.addNewList('New List');
   }
 

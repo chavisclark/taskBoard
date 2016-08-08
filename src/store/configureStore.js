@@ -9,10 +9,10 @@ import createLogger from 'redux-logger';
 export default function configureStore(initialState) {
   const middleware = [thunk, promiseMiddleware];
 
-//Responsible for the logger
+  //Responsible for the logger
   middleware.push(createLogger());
 
-//This is the store and the central hub part I was referencing earlier
+  //This is the store and the central hub part I was referencing earlier
   const store = createStore(rootReducer, initialState, compose(
     applyMiddleware(...middleware),
     typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f
@@ -20,7 +20,7 @@ export default function configureStore(initialState) {
 
   if (module.hot) {
 
-// Enable hot module replacement for reducers
+    // Enable hot module replacement for reducers
     module.hot.accept('../reducers', () => {
       const nextReducer = require('../reducers');
       store.replaceReducer(nextReducer);

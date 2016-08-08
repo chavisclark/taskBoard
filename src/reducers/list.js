@@ -5,7 +5,8 @@ import {
 } from '../types';
 
 export default function list(state = {
-//I decided to set the default lists right here
+  
+  //I decided to set the default lists right here
   lists: [ 
           { id: 7, name: 'To-do', tasks:[] },
           { id: 2, name: 'In Progress', tasks:[] },

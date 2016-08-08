@@ -20,6 +20,7 @@ const listTarget = {
     props.dispatch(actions.attachToList(item, dropResult));
   }
 };
+
 //In this function I'm going to connect my drop 
 //target node and monitor whether the pointer is hovering over the TodoListBox
 //For docs on react-dnd see https://gaearon.github.io/react-dnd/docs-drop-target.html
@@ -38,6 +39,7 @@ class TodoListBox extends Component {
       tasks: this.props.tasks
     };
   }
+
   //Here I'm using the static method to list my props
   static propTypes = {
     connectDropTarget: PropTypes.func.isRequired,
@@ -47,9 +49,9 @@ class TodoListBox extends Component {
     droppedTasks: PropTypes.any
   };
 
-//This function allows the TaskItem to move
-//It will be passed through as one of its props
-//For docs on react-dnd see https://gaearon.github.io/react-dnd/docs-drop-target.html
+  //This function allows the TaskItem to move
+  //It will be passed through as one of its props
+  //For docs on react-dnd see https://gaearon.github.io/react-dnd/docs-drop-target.html
   moveItem(dragIndex, hoverIndex) {
     const { tasks } = this.props;
     const dragItem = tasks[dragIndex];
@@ -64,8 +66,8 @@ class TodoListBox extends Component {
     }));
   }
 
-//This function is checking to see whether the TaskItem has dropped
-//It will also be getting passed through as a prop
+  //This function is checking to see whether the TaskItem has dropped
+  //It will also be getting passed through as a prop
   isDropped(taskText) {
     return this.props.droppedTasks.indexOf(taskText) > -1;
   }
@@ -81,7 +83,8 @@ class TodoListBox extends Component {
     } else if (canDrop) {
       taskDropStyle = 'cc-target-hover';
     }
-//I'm returning the ListBox rendered as a drop target
+    
+    //I'm returning the ListBox rendered as a drop target
     return connectDropTarget(
       <div className={cx("large-4", "medium-12", "columns", "cc-spacer")}>
         <div className={cx("cc-panel", `${taskDropStyle}`)}>

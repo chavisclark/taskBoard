@@ -67,8 +67,8 @@ class ListBoxes extends Component {
       </div>
     );
   }
-//This function will be handled by the ListBoxes and will
-//fed back
+
+ //This function will be handled by the ListBoxes and will fed back
  handleDrop(item) {
     const { task } = item;
     this.setState(update(this.state, {

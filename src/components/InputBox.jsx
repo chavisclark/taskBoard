@@ -29,7 +29,7 @@ export default class InputBox extends Component {
     onInputChange(event.target.value);
   }
 
-//Pressing enter can submit the form as well
+  //Pressing enter can submit the form as well
   onKeyDown(event) {
     if (event.keyCode === ENTER_KEY_CODE) {
       this.handleOnClick();
